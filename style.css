@@ -1,0 +1,75 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  overflow-x: hidden;
+  font-family: "Arial", sans-serif;
+}
+
+.panel {
+  height: 100vh;
+  width: 100%;
+  background: #111;
+  color: #f8f8f8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.panel:nth-child(even) {
+  background: #1e1e1e;
+}
+
+.content h1 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+.content p {
+  font-size: 1.2em;
+  max-width: 800px;
+}
+
+.blimp-container {
+  position: fixed;
+  top: 100px;
+  left: -300px;
+  z-index: 1;
+  width: 300px;
+  pointer-events: none;
+}
+
+.blimp {
+  width: 100%;
+  animation: flyBlimp 30s linear infinite;
+}
+
+@keyframes flyBlimp {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(150vw);
+  }
+}
+
+.mask-figure {
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 3;
+  width: 120px;
+  pointer-events: none;
+}
+
+.mask-figure img {
+  width: 100%;
+}
