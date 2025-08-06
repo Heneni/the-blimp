@@ -1,75 +1,60 @@
-* {
+body {
   margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html, body {
-  height: 100%;
+  font-family: Arial, sans-serif;
+  background-color: #111;
+  color: white;
   overflow-x: hidden;
-  font-family: "Arial", sans-serif;
-}
-
-.panel {
-  height: 100vh;
-  width: 100%;
-  background: #111;
-  color: #f8f8f8;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 60px;
-  text-align: center;
-  position: relative;
-  z-index: 2;
-}
-
-.panel:nth-child(even) {
-  background: #1e1e1e;
-}
-
-.content h1 {
-  font-size: 2.5em;
-  margin-bottom: 20px;
-}
-
-.content p {
-  font-size: 1.2em;
-  max-width: 800px;
+  scroll-behavior: smooth;
 }
 
 .blimp-container {
   position: fixed;
-  top: 100px;
-  left: -300px;
-  z-index: 1;
-  width: 300px;
-  pointer-events: none;
+  top: 10vh;
+  left: -200px;
+  width: 150px;
+  z-index: 1000;
+  animation: flyBlimp 60s linear infinite;
 }
 
 .blimp {
   width: 100%;
-  animation: flyBlimp 30s linear infinite;
 }
 
 @keyframes flyBlimp {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(150vw);
-  }
+  0% { left: -200px; }
+  100% { left: 110vw; }
 }
 
 .mask-figure {
   position: fixed;
   bottom: 20px;
-  right: 30px;
-  z-index: 3;
-  width: 120px;
-  pointer-events: none;
+  right: 20px;
+  width: 100px;
+  z-index: 999;
 }
 
 .mask-figure img {
   width: 100%;
+  border-radius: 10px;
+}
+
+.panel {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  box-sizing: border-box;
+  border-bottom: 1px solid #333;
+}
+
+.content {
+  max-width: 600px;
+  text-align: center;
+}
+
+h1 {
+  font-size: 2em;
+  margin-bottom: 1em;
+  color: #ffcc00;
 }
